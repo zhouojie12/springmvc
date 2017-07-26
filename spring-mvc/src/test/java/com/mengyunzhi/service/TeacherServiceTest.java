@@ -15,7 +15,7 @@ import javax.persistence.EntityNotFoundException;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class TeacherServiceImplTest {
+public class TeacherServiceTest {
     @Autowired
     private TeacherService teacherService;
     @Autowired
