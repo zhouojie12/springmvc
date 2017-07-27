@@ -87,4 +87,8 @@ public class KlassServiceTest {
         assertThat(klassService.get(klass.getId())).isNull();
     }
 
+    @Test
+    public void getNewKlass() {
+        assertThat(klassService.getNewKlass()).isNotNull();
+    }
 }
