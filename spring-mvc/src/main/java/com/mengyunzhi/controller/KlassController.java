@@ -2,6 +2,8 @@ package com.mengyunzhi.controller;
 
 import com.mengyunzhi.repository.Klass;
 import com.mengyunzhi.service.KlassService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/klass")
 public class KlassController {
+
+    private final static Logger logger = LoggerFactory.getLogger(KlassController.class);
+
     @Autowired
     private KlassService klassService;
 
@@ -37,4 +42,5 @@ public class KlassController {
             @RequestParam Long teacherId) {
         return klassService.update(id, name, teacherId);
     }
+
 }
