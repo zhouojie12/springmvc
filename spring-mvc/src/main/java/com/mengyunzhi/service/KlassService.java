@@ -10,5 +10,5 @@ public interface KlassService {
     void delete(Long id);
     Klass update(Long id, String name, Long teacherId);
     Klass save(String name, Long teacherId);
-
+    Klass getNewKlass();
 }

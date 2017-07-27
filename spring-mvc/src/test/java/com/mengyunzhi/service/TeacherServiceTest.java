@@ -10,6 +10,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.persistence.EntityNotFoundException;
 
+import static org.assertj.core.api.Java6Assertions.assertThat;
+
 /**
  * Created by panjie on 17/4/7.
  */
@@ -105,5 +107,9 @@ public class TeacherServiceTest {
         Teacher teacher = teacherRepository.findOne(teacherLisi.getId());
         System.out.println(teacher);
 
+    }
+    @Test
+    public void getNewTeacher() {
+        assertThat(teacherService.getNewTeacher()).isNotNull();
     }
 }

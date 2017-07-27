@@ -11,4 +11,5 @@ public interface TeacherService {
     Teacher saveTeacher(Long id, Teacher teacher) throws EntityNotFoundException;
     void  deleteTeacher(Teacher teacher);
     void deleteTeacherById(Long id);
+    Teacher getNewTeacher();
 }

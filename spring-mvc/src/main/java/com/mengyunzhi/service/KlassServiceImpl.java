@@ -18,6 +18,9 @@ public class KlassServiceImpl implements KlassService {
     @Autowired
     private TeacherRepository teacherRepository;
 
+    @Autowired
+    private TeacherService teacherService;
+
     @Override
     public Klass get(Long id) {
         return klassRepository.findOne(id);
@@ -57,5 +60,15 @@ public class KlassServiceImpl implements KlassService {
 
         // 保存
         return klassRepository.save(klass);
+    }
+
+    @Override
+    public Klass getNewKlass() {
+        Klass klass = new Klass();
+        klass.setName("示例班级");                               // 设置名称
+        klass.setTeacher(teacherService.getNewTeacher());       // 设置教师
+
+        klassRepository.save(klass);
+        return klass;
     }
 }
